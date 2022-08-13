@@ -8,6 +8,7 @@ wake = ""
 first_time: bool = True
 
 
+# *****Check for first time use and setup*******
 def check_first_time():
     path = "va_name.txt"
     if os.path.exists(path):
@@ -61,6 +62,7 @@ def setup():
     speech(f"Nice to meet you {get_user_name()}")
 
 
+# **********Functions that are tied to user commands*********
 def play():
     speech("What song do you want to play?")
     song = get_audio().lower()
@@ -83,6 +85,7 @@ def google_search():
 def what_time():
     time = datetime.datetime.now().strftime("%I:%M %p")
     speech("It is " + time)
+
 
 def wiki_search():
     speech("What do you want me to search for?")
